@@ -85,7 +85,7 @@
 }
 </script>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23030308'/><text y='.9em' font-size='72' x='50%' text-anchor='middle' dominant-baseline='top' fill='%2300f5ff'>R</text></svg>">
+<link rel="icon" type="image/png" href="favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -363,7 +363,20 @@ footer{background:var(--dark2);border-top:1px solid rgba(0,245,255,.08);padding:
 <div id="cur"></div>
 <div id="cur-r"></div>
 <canvas id="pcvs"></canvas>
-<button id="totop" onclick="scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+<button id="totop"><i class="fas fa-chevron-up"></i></button>
+<script>
+const toTopBtn = document.getElementById('totop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    toTopBtn.classList.add('show');
+  } else {
+    toTopBtn.classList.remove('show');
+  }
+});
+toTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 
 <!-- NAV -->
 <nav id="navbar">
