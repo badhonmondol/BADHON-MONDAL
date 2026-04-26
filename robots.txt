@@ -1,0 +1,25 @@
+# Robots.txt for Badhon Mondal Portfolio
+# This file tells search engines how to crawl and index the website
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (in seconds)
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://badhonmondol.github.io/BADHON-MONDAL/sitemap.xml

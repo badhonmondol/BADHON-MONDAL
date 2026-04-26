@@ -16,6 +16,10 @@
 <meta name="revisit-after" content="2 days">
 <meta name="distribution" content="Global">
 <meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#030308">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -38,8 +42,44 @@
 <link rel="canonical" href="https://badhonmondol.github.io/BADHON-MONDAL/">
 <link rel="alternate" hreflang="en" href="https://badhonmondol.github.io/BADHON-MONDAL/">
 
+<!-- Performance & Optimization -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="prefetch" href="favicon.png">
+
 <!-- Security Headers -->
 <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- Mobile App Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Badhon Mondal - Software Developer",
+  "image": "https://badhonmondol.github.io/BADHON-MONDAL/favicon.png",
+  "description": "Full-Stack Developer specializing in Flutter, Python, C++, and Cross-Platform Development",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BD",
+    "addressRegion": "Rajbari",
+    "addressLocality": "Jangal"
+  },
+  "telephone": "+8801821312017",
+  "email": "badhonkumurm@gmail.com",
+  "url": "https://badhonmondol.github.io/BADHON-MONDAL/"
+}
+</script>
 
 <!-- Structured Data - JSON-LD -->
 <script type="application/ld+json">
@@ -82,6 +122,52 @@
   "email": "badhonkumurm@gmail.com",
   "areaServed": "Global",
   "priceRange": "$$$"
+}
+</script>
+
+<!-- Breadcrumb Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://badhonmondol.github.io/BADHON-MONDAL/#home"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://badhonmondol.github.io/BADHON-MONDAL/#about"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Skills",
+      "item": "https://badhonmondol.github.io/BADHON-MONDAL/#skills"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Projects",
+      "item": "https://badhonmondol.github.io/BADHON-MONDAL/#projects"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Freelance",
+      "item": "https://badhonmondol.github.io/BADHON-MONDAL/#freelance"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Contact",
+      "item": "https://badhonmondol.github.io/BADHON-MONDAL/#contact"
+    }
+  ]
 }
 </script>
 
@@ -364,19 +450,6 @@ footer{background:var(--dark2);border-top:1px solid rgba(0,245,255,.08);padding:
 <div id="cur-r"></div>
 <canvas id="pcvs"></canvas>
 <button id="totop"><i class="fas fa-chevron-up"></i></button>
-<script>
-const toTopBtn = document.getElementById('totop');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    toTopBtn.classList.add('show');
-  } else {
-    toTopBtn.classList.remove('show');
-  }
-});
-toTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -421,7 +494,7 @@ toTopBtn.addEventListener('click', () => {
     <div class="photo-wrap">
       <div class="photo-glow"></div>
       <div class="photo-border"></div>
-      <div class="photo-mask"><img id="hero-img" src="" alt="Badhon Mondal"></div>
+      <div class="photo-mask"><img id="hero-img" src="" loading="lazy" alt="Badhon Mondal - Full Stack Developer"></div>
       <div class="orbit orbit1"></div>
       <div class="orbit orbit2"></div>
     </div>
@@ -919,6 +992,151 @@ document.addEventListener('DOMContentLoaded', () => {
     if (title) title.style.animation = 'textGlow 2s ease-in-out infinite';
   });
 });
+
+// ===== TYPING ANIMATION FOR HERO =====
+const texts = [
+  'Flutter Developer',
+  'Python Programmer', 
+  'C++ Expert',
+  'Full-Stack Developer',
+  'Ethical Hacker',
+  'React Native Dev'
+];
+
+let index = 0;
+let charIndex = 0;
+let currentText = '';
+let isDeleting = false;
+
+function type() {
+  const tc = document.getElementById('tc');
+  if (!tc) return;
+  
+  if (isDeleting) {
+    currentText = texts[index].substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    currentText = texts[index].substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  tc.textContent = currentText;
+
+  if (!isDeleting && charIndex === texts[index].length) {
+    setTimeout(() => isDeleting = true, 2000);
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    index = (index + 1) % texts.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 100);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(type, 800);
+});
+
+// ===== CONTACT FORM HANDLER =====
+function sendMsg() {
+  const name = document.getElementById('fn')?.value?.trim();
+  const email = document.getElementById('fe')?.value?.trim();
+  const subject = document.getElementById('fs')?.value?.trim();
+  const message = document.getElementById('fb')?.value?.trim();
+
+  if (!name || !email || !subject || !message) {
+    alert('❌ Please fill all fields');
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('❌ Please enter a valid email address');
+    return;
+  }
+
+  // Show success message
+  alert('✅ Thank you! Your message has been received. I will get back to you soon.');
+  
+  // Clear form
+  document.getElementById('fn').value = '';
+  document.getElementById('fe').value = '';
+  document.getElementById('fs').value = '';
+  document.getElementById('fb').value = '';
+}
+
+// ===== SCROLL TO TOP BUTTON =====
+const toTopBtn = document.getElementById('totop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    toTopBtn?.classList.add('show');
+  } else {
+    toTopBtn?.classList.remove('show');
+  }
+});
+
+toTopBtn?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== NAV LINK ACTIVE STATE =====
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').slice(1) === current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// ===== INTERSECTION OBSERVER FOR REVEAL ANIMATIONS =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('vis');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.rv').forEach(el => {
+  observer.observe(el);
+});
+
+// ===== PERFORMANCE: LAZY LOAD IMAGES =====
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll('img[data-src]').forEach(img => {
+    imageObserver.observe(img);
+  });
+}
 </script>
 </body>
 </html>
