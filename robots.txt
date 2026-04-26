@@ -4,9 +4,12 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+# আপনার সাইটম্যাপ যেন গুগল পড়তে পারে সেজন্য এটাকে বিশেষভাবে Allow করা হলো
+Allow: /sitemap.xml
+
+# আপনার ব্যক্তিগত এবং ডেভেলপমেন্ট ফাইলগুলো সার্চ রেজাল্ট থেকে লুকিয়ে রাখার জন্য
 Disallow: /admin/
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /.git/
 Disallow: /node_modules/
 
@@ -18,8 +21,8 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Crawl delay (in seconds)
+# Crawl delay (সার্ভারের ওপর চাপ কমাতে ১ সেকেন্ড দেরি করবে)
 Crawl-delay: 1
 
-# Sitemap location
+# আপনার সাইটম্যাপের সঠিক লিঙ্ক
 Sitemap: https://badhonmondol.github.io/BADHON-MONDAL/sitemap.xml
