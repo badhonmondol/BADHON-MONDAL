@@ -1,40 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0">
 
+  <!-- Homepage -->
   <url>
     <loc>https://badhonmondol.github.io/BADHON-MONDAL/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://badhonmondol.github.io/BADHON-MONDAL/badhon.png</image:loc>
+      <image:title>Badhon Mondal - Full Stack Developer Profile</image:title>
+      <image:caption>Badhon Mondal (Reaper) - Flutter, Python, React Native Developer</image:caption>
+    </image:image>
   </url>
 
+  <!-- About Section -->
   <url>
     <loc>https://badhonmondol.github.io/BADHON-MONDAL/#about</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Skills Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#skills</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#projects</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Freelance Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#freelance</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Portfolio/Social Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#portfolio</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#contact</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- GitHub Projects -->
+  <url>
+    <loc>https://github.com/badhonmondal/recovery_app</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#skills</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://github.com/badhonmondal/recovery_app/tree/main</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#projects</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://github.com/badhonmondal/scholarship</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#contact</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://github.com/badhonmondal/scholarship/tree/main</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/badhonmondal/e_turnament_app</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://github.com/badhonmondal/e_turnament_app/tree/main</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
