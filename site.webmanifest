@@ -1,19 +1,21 @@
 {
   "name": "Badhon Mondal - Full Stack Developer",
-  "short_name": "Badhon Mondal",
-  "description": "Professional Full-Stack Developer specializing in Flutter, Python, C++, React Native, and Ethical Hacking",
+  "short_name": "Badhon",
+  "description": "Professional Full-Stack Developer specializing in Flutter, Python, C++, React Native, and Ethical Hacking. Available for freelance projects worldwide.",
+  "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "apple-touch-icon.png",
@@ -29,12 +31,79 @@
       "src": "favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
     }
   ],
   "start_url": "/BADHON-MONDAL/",
   "scope": "/BADHON-MONDAL/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#030308",
   "theme_color": "#00f5ff",
-  "display": "standalone",
-  "orientation": "portrait-primary"
+  "categories": [
+    "productivity",
+    "developer"
+  ],
+  "screenshots": [
+    {
+      "src": "badhon.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "badhon.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Projects",
+      "url": "/BADHON-MONDAL/#projects",
+      "description": "Quick access to portfolio projects"
+    },
+    {
+      "name": "Contact",
+      "url": "/BADHON-MONDAL/#contact",
+      "description": "Get in touch with Badhon"
+    }
+  ],
+  "share_target": {
+    "action": "/BADHON-MONDAL/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/BADHON-MONDAL/",
+      "accept": {
+        "text/plain": [".txt"],
+        "application/json": [".json"]
+      }
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+portfolio",
+      "url": "/BADHON-MONDAL/?url=%s"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope_extensions": [
+    {
+      "origin": "https://badhonmondol.github.io"
+    }
+  ]
 }
