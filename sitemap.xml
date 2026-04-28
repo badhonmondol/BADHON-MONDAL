@@ -26,6 +26,15 @@
     <mobile:mobile/>
   </url>
 
+  <!-- Education Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#education</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
   <!-- Skills Section -->
   <url>
     <loc>https://badhonmondol.github.io/BADHON-MONDAL/#skills</loc>
@@ -73,31 +82,25 @@
 
   <!-- GitHub Projects -->
   <url>
-    <loc>https://github.com/badhonmondal/recovery_app</loc>
+    <loc>https://github.com/badhonmondal/recovery_app/tree/master</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://github.com/badhonmondal/recovery_app/tree/main</loc>
+    <loc>https://github.com/badhonmondal/scholarship/tree/master</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://github.com/badhonmondal/scholarship</loc>
+    <loc>https://github.com/badhonmondal/e_turnament_app/tree/master</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://github.com/badhonmondal/scholarship/tree/main</loc>
-    <lastmod>2026-04-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <url>
