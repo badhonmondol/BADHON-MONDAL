@@ -1,115 +1,27 @@
-# Robots.txt for Badhon Mondal Portfolio - SEO/AEO/GEO Optimized
-# This file tells search engines how to crawl and index the website
-# Enhanced for Search Engines, Answer Engines, and Geographic Discovery
+# Robots.txt for Badhon Mondal Portfolio
 
-# ============================================
-# GOOGLE & STANDARD CRAWLERS
-# ============================================
-
-# Allow all crawlers by default
 User-agent: *
 Allow: /
-Allow: /sitemap.xml
-Allow: /site.webmanifest
-Allow: /robots.txt
-
-# Disallow sensitive and private paths
-Disallow: /admin/
-Disallow: /*.json$
 Disallow: /.git/
+Disallow: /admin/
+Disallow: /config/
 Disallow: /node_modules/
 Disallow: /.env
-Disallow: /config/
-Disallow: /.github/
-Disallow: /.gitignore
-Disallow: /package.json
 
-# ============================================
-# GOOGLE SPECIFIC
-# ============================================
-
-User-agent: Googlebot
-Allow: /
-Allow: /sitemap.xml
-Allow: /*.html$
-Crawl-delay: 0
-Request-rate: 30/1s
-
-# Google Image Crawler
-User-agent: Googlebot-Image
-Allow: /
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.gif$
-Allow: /*.webp$
-
-# ============================================
-# BING & MICROSOFT CRAWLERS
-# ============================================
-
-User-agent: Bingbot
-Allow: /
-Allow: /sitemap.xml
-Crawl-delay: 1
-Request-rate: 20/1s
-
-# ============================================
-# AI & ANSWER ENGINE CRAWLERS
-# ============================================
-
-# ChatGPT (OpenAI)
+# AI and answer-engine crawlers
 User-agent: GPTBot
 Allow: /
-Allow: /sitemap.xml
-Crawl-delay: 1
 
-# Claude (Anthropic)
 User-agent: Claude-Web
 Allow: /
-Allow: /sitemap.xml
-Crawl-delay: 1
 
-# Google Bard/Gemini
-User-agent: Bard
-Allow: /
-Allow: /sitemap.xml
-Crawl-delay: 1
-
-# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
-Allow: /sitemap.xml
-Crawl-delay: 1
 
-# Other AI Crawlers
-User-agent: AdsBot-Google
+User-agent: Google-Extended
 Allow: /
 
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 1
-
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Exabot
-Allow: /
-Crawl-delay: 1
-
-# ============================================
-# SOCIAL MEDIA CRAWLERS
-# ============================================
-
+# Social preview crawlers
 User-agent: facebookexternalhit
 Allow: /
 
@@ -119,21 +31,4 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: WhatsApp
-Allow: /
-
-User-agent: Telegrambot
-Allow: /
-
-# ============================================
-# SITEMAP & CRAWL HINTS
-# ============================================
-
-# Primary Sitemap
 Sitemap: https://badhonmondol.github.io/BADHON-MONDAL/sitemap.xml
-
-# Crawl-delay global (0 for optimal crawling)
-Crawl-delay: 0
-
-# Request rate for high-volume crawlers
-Request-rate: 30/1s

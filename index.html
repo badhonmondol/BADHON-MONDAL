@@ -385,7 +385,7 @@
       }
     },
     {
-      "@type": ["ProfilePage", "WebPage"],
+      "@type": "ProfilePage",
       "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#profilepage",
       "url": "https://badhonmondol.github.io/BADHON-MONDAL/",
       "name": "Badhon Mondal (Reaper) - Full-Stack Developer Portfolio",
@@ -419,6 +419,7 @@
           "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#projects-list"
         }
       ],
+      "datePublished": "2024-01-01T00:00:00+06:00",
       "dateCreated": "2024-01-01T00:00:00+06:00",
       "dateModified": "2026-05-12T12:41:46+06:00",
       "inLanguage": "en"
@@ -793,7 +794,7 @@ section{position:relative;padding:100px 50px;z-index:1;}
 .proj-desc{color:rgba(255,255,255,.58);font-size:.92rem;line-height:1.65;margin-bottom:18px;}
 .proj-tech{display:flex;gap:7px;flex-wrap:wrap;}
 .tech-chip{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.3);border-radius:3px;padding:3px 10px;font-size:.73rem;color:var(--purple);font-family:'Share Tech Mono',monospace;}
-.proj-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--cyan);font-size:.82rem;font-family:'Share Tech Mono',monospace;opacity:.7;transition:opacity .3s;}
+.proj-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;color:var(--cyan);font-size:.82rem;font-family:'Share Tech Mono',monospace;opacity:.7;transition:opacity .3s;text-decoration:none;}
 .proj-card:hover .proj-link{opacity:1;}
 
 /* FREELANCE */
@@ -1422,7 +1423,7 @@ toTopBtn.addEventListener('click', () => {
   </div>
   <div class="proj-grid">
 
-    <div class="proj-card rv" onclick="openLink('https://github.com/badhonmondol/recovery_app/tree/master')" style="cursor:pointer;">
+    <div class="proj-card rv" onclick="openLink('https://github.com/badhonmondol/recovery_app')" style="cursor:pointer;">
       <span class="proj-num">01</span>
       <div class="proj-type">MOBILE APP</div>
       <h3 class="proj-title">Recovery App</h3>
@@ -1432,10 +1433,10 @@ toTopBtn.addEventListener('click', () => {
         <span class="tech-chip">Dart</span>
         <span class="tech-chip">Firebase</span>
       </div>
-      <span class="proj-link"><i class="fab fa-github"></i> View Project</span>
+      <a class="proj-link" href="https://github.com/badhonmondal/recovery_app" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="fab fa-github"></i> View Project</a>
     </div>
 
-    <div class="proj-card rv" onclick="openLink('https://github.com/badhonmondal/scholarship/tree/master')" style="cursor:pointer;">
+    <div class="proj-card rv" onclick="openLink('https://github.com/badhonmondal/scholarship')" style="cursor:pointer;">
       <span class="proj-num">02</span>
       <div class="proj-type">MOBILE APP</div>
       <h3 class="proj-title">Scholarship App</h3>
@@ -1445,10 +1446,10 @@ toTopBtn.addEventListener('click', () => {
         <span class="tech-chip">Dart</span>
         <span class="tech-chip">Node.js</span>
       </div>
-      <span class="proj-link"><i class="fab fa-github"></i> View Project</span>
+      <a class="proj-link" href="https://github.com/badhonmondal/scholarship" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="fab fa-github"></i> View Project</a>
     </div>
 
-    <div class="proj-card rv" onclick="openLink('https://github.com/badhonmondal/e_turnament_app/tree/master')" style="cursor:pointer;">
+    <div class="proj-card rv" onclick="openLink('https://github.com/badhonmondal/e_turnament_app')" style="cursor:pointer;">
       <span class="proj-num">03</span>
       <div class="proj-type">MOBILE APP</div>
       <h3 class="proj-title">E-Tournament App</h3>
@@ -1459,7 +1460,7 @@ toTopBtn.addEventListener('click', () => {
         <span class="tech-chip">Firebase</span>
         <span class="tech-chip">Real-time DB</span>
       </div>
-      <span class="proj-link"><i class="fab fa-github"></i> View Project</span>
+      <a class="proj-link" href="https://github.com/badhonmondal/e_turnament_app" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="fab fa-github"></i> View Project</a>
     </div>
 
   </div>
@@ -1733,7 +1734,7 @@ window.addEventListener('scroll',()=>{
 
 // OPEN LINK (HIDDEN)
 function openLink(url){
-  window.open(url, '_blank');
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 // SEND MESSAGE
@@ -1827,3 +1828,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
