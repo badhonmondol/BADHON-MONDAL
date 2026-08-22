@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home / Main Page -->
   <url>
     <loc>https://badhonmondol.github.io/BADHON-MONDAL/</loc>
     <lastmod>2026-08-22</lastmod>
@@ -9,7 +11,82 @@
     <image:image>
       <image:loc>https://badhonmondol.github.io/BADHON-MONDAL/badhon.png</image:loc>
       <image:title>Badhon Mondal - Full-Stack Software Developer</image:title>
-      <image:caption>Badhon Mondal, also known as Reaper, full-stack software developer from Bangladesh.</image:caption>
+      <image:caption>Badhon Mondal, also known as Reaper, full-stack software developer from Bangladesh specializing in Flutter, Python, and cross-platform apps.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://badhonmondol.github.io/BADHON-MONDAL/image.png</image:loc>
+      <image:title>Badhon Mondal Logo</image:title>
+      <image:caption>Official logo of Badhon Mondal - Reaper, Full-Stack Developer from Bangladesh.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://badhonmondol.github.io/BADHON-MONDAL/reaper.jpeg</image:loc>
+      <image:title>Reaper - Badhon Mondal</image:title>
+      <image:caption>Badhon Mondal known as Reaper - Software Developer and Ethical Hacker from Bangladesh.</image:caption>
     </image:image>
   </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#about</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Education Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#education</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Experience Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#experience</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#projects</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Freelance Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#freelance</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Social Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#portfolio</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#faq</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://badhonmondol.github.io/BADHON-MONDAL/#contact</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
