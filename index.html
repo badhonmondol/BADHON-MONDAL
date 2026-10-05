@@ -875,6 +875,23 @@ nav{position:fixed;top:0;width:100%;z-index:1000;padding:16px 50px;display:flex;
 .nav-links a:hover,.nav-links a.active{color:var(--cyan);text-shadow:0 0 8px var(--cyan);}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
 
+/* HAMBURGER */
+.ham-btn{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:1px solid rgba(0,229,255,.3);border-radius:7px;cursor:pointer;z-index:1100;padding:0;flex-shrink:0;}
+.ham-btn span{display:block;width:20px;height:2px;background:var(--cyan);border-radius:2px;transition:all .3s;}
+.ham-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.ham-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* MOBILE NAV OVERLAY */
+.nav-overlay{display:none;position:fixed;inset:0;z-index:1050;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);}
+.nav-overlay.open{display:block;}
+.nav-drawer{position:fixed;top:0;right:-100%;width:260px;height:100%;z-index:1060;background:rgba(3,3,8,.97);border-left:1px solid rgba(0,229,255,.15);padding:80px 30px 30px;transition:right .35s cubic-bezier(.23,1,.32,1);display:flex;flex-direction:column;gap:4px;}
+.nav-drawer.open{right:0;}
+.nav-drawer a{color:rgba(255,255,255,.65);text-decoration:none;font-family:'Share Tech Mono',monospace;font-size:.9rem;letter-spacing:1.5px;padding:13px 16px;border-radius:8px;border:1px solid transparent;transition:all .25s;}
+.nav-drawer a:hover,.nav-drawer a.active{color:var(--cyan);border-color:rgba(0,229,255,.25);background:rgba(0,229,255,.06);}
+.nav-close{position:absolute;top:16px;right:16px;background:none;border:none;color:rgba(255,255,255,.4);font-size:1.5rem;cursor:pointer;line-height:1;transition:color .2s;}
+.nav-close:hover{color:var(--cyan);}
+
 #home{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 50px 60px;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 50%,rgba(0,229,255,.09) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(240,0,184,.08) 0%,transparent 55%),radial-gradient(ellipse at 55% 85%,rgba(155,89,255,.07) 0%,transparent 55%),radial-gradient(ellipse at 50% 50%,rgba(0,255,157,.03) 0%,transparent 70%);animation:aurora 12s ease infinite;background-size:300% 300%;}
 .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.04) 1px,transparent 1px);background-size:55px 55px;}
@@ -1229,9 +1246,9 @@ footer{background:var(--dark2);border-top:1px solid rgba(0,229,255,.12);padding:
   .ab-grid{grid-template-columns:1fr;}
   .ct-wrap{grid-template-columns:1fr;}
   .sidebar{display:none;}
-  nav{padding:12px 15px;}
-  .nav-links{gap:8px;flex-wrap:wrap;justify-content:center;}
-  .nav-links a{font-size:.7rem;padding:6px 10px;}
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .ham-btn{display:flex;}
   section{padding:60px 20px;}
   .sec-title{font-size:2rem;}
   .skill-cats{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
@@ -1248,13 +1265,14 @@ footer{background:var(--dark2);border-top:1px solid rgba(0,229,255,.12);padding:
   .ab-text p{font-size:.98rem;}
   .ct-form{gap:12px;}
   .finput,.ftextarea{padding:11px 14px;font-size:.95rem;}
+  /* WhatsApp button — keep clear of edges */
+  #whatsapp-float{bottom:85px;right:16px;width:50px;height:50px;font-size:1.3rem;}
+  #totop{bottom:25px;right:16px;width:38px;height:38px;}
 }
 @media(max-width:600px){
-  nav{padding:10px 12px;}
+  nav{padding:10px 15px;}
   .logo{font-size:.95rem;}
   .logo .sub{font-size:.55rem;}
-  .nav-links{gap:4px;}
-  .nav-links a{font-size:.6rem;padding:3px 6px;}
   #home{padding:70px 15px 30px;}
   .h-tag{font-size:.75rem;}
   .h-name .fn,.h-name .ln{font-size:1.9rem;}
@@ -1339,7 +1357,23 @@ toTopBtn.addEventListener('click', () => {
     <li><a href="#freelance">Freelance</a></li>
     <li><a href="#contact">Social & Contact</a></li>
   </ul>
+  <button class="ham-btn" id="hamBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-close" id="navClose" aria-label="Close menu">&times;</button>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#freelance">Freelance</a>
+  <a href="#contact">Social &amp; Contact</a>
+</div>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
@@ -1932,7 +1966,10 @@ window.addEventListener('scroll',()=>{
   const pos=scrollY+90;
   secs.forEach(s=>{
     const lnk=document.querySelector('.nav-links a[href="#'+s.id+'"]');
-    if(lnk){ if(pos>=s.offsetTop && pos<s.offsetTop+s.offsetHeight){ lnk.classList.add('active'); } else { lnk.classList.remove('active'); } }
+    const dlnk=document.querySelector('.nav-drawer a[href="#'+s.id+'"]');
+    const active = pos>=s.offsetTop && pos<s.offsetTop+s.offsetHeight;
+    if(lnk){ active ? lnk.classList.add('active') : lnk.classList.remove('active'); }
+    if(dlnk){ active ? dlnk.classList.add('active') : dlnk.classList.remove('active'); }
   });
   document.getElementById('totop').classList.toggle('show', scrollY>400);
   // SCROLL PROGRESS BAR
@@ -2009,6 +2046,28 @@ function sendMsg(){
     window.location.href=`mailto:badhonkumurm@gmail.com?subject=${subject}&body=${message}`;
   });
 }
+
+// HAMBURGER MENU
+const hamBtn = document.getElementById('hamBtn');
+const navDrawer = document.getElementById('navDrawer');
+const navOverlay = document.getElementById('navOverlay');
+const navClose = document.getElementById('navClose');
+function openDrawer(){
+  hamBtn.classList.add('open');
+  navDrawer.classList.add('open');
+  navOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeDrawer(){
+  hamBtn.classList.remove('open');
+  navDrawer.classList.remove('open');
+  navOverlay.classList.remove('open');
+  document.body.style.overflow='';
+}
+hamBtn.addEventListener('click', openDrawer);
+navClose.addEventListener('click', closeDrawer);
+navOverlay.addEventListener('click', closeDrawer);
+navDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
 // STAGGERED CARD ANIMATIONS
 document.addEventListener('DOMContentLoaded', () => {
