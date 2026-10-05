@@ -2078,10 +2078,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.stat-card').forEach((card, i) => card.style.animationDelay = `${i * 0.1}s`);
 });
 
-// PARALLAX EFFECT
+// PARALLAX EFFECT — clamped so content never slides under the navbar
 const heroInner = document.querySelector('.hero-inner');
 window.addEventListener('scroll', () => {
-  if (heroInner && window.scrollY < window.innerHeight) heroInner.style.transform = `translateY(${window.scrollY * 0.5}px)`;
+  if (!heroInner || window.scrollY >= window.innerHeight) return;
+  const navH = document.getElementById('navbar').offsetHeight;
+  const shift = window.scrollY * 0.3; // reduced from 0.5 → less aggressive
+  const maxShift = Math.max(0, heroInner.getBoundingClientRect().top + heroInner.offsetHeight - navH - 80);
+  heroInner.style.transform = `translateY(${Math.min(shift, maxShift)}px)`;
 });
 
 // LOGO ANIMATION
