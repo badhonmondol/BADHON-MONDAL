@@ -5,7 +5,7 @@
   <!-- Main Page -->
   <url>
     <loc>https://badhonmondol.github.io/BADHON-MONDAL/</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -19,8 +19,8 @@
       <image:caption>Official logo of Badhon Mondal - Reaper, Full-Stack Developer from Bangladesh.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://badhonmondol.github.io/BADHON-MONDAL/reaper.jpeg</image:loc>
-      <image:title>Reaper - Badhon Mondal</image:title>
+      <image:loc>https://badhonmondol.github.io/BADHON-MONDAL/badhon.png</image:loc>
+      <image:title>Badhon Mondal - Profile Photo</image:title>
       <image:caption>Badhon Mondal known as Reaper - Software Developer and Ethical Hacker from Bangladesh.</image:caption>
     </image:image>
   </url>
