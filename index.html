@@ -700,84 +700,7 @@
         }
       ]
     },
-    {
-      "@type": "FAQPage",
-      "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq",
-      "name": "Badhon Mondal Portfolio FAQ",
-      "url": "https://badhonmondol.github.io/BADHON-MONDAL/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-who",
-          "name": "Who is Badhon Mondal?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal - Full-Stack Developer",
-            "text": "Badhon Mondal, professionally known as Reaper, is a Full-Stack Software Developer from Bangladesh with experience building cross-platform applications for Android, iOS, Web, and Windows."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-languages",
-          "name": "What programming languages does Badhon Mondal know?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal's Programming Languages",
-            "text": "Badhon works with Flutter, Dart, Python, Java, C++, JavaScript, React Native, Node.js, Firebase, and modern web technologies."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-services",
-          "name": "What services does Badhon Mondal provide?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal's Services",
-            "text": "Badhon provides Flutter app development, full-stack web development, Python backend development, React Native development, software consultation, and custom cross-platform software development."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-contact",
-          "name": "How can I contact Badhon Mondal?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal Contact Information",
-            "text": "You can contact Badhon Mondal by email at badhonkumurm@gmail.com, WhatsApp at +8801821312017, LinkedIn, GitHub, Fiverr, or Upwork."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-location",
-          "name": "Where is Badhon Mondal based?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal Location",
-            "text": "Badhon Mondal is based in Dhaka, Bangladesh and works remotely with clients worldwide."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-projects",
-          "name": "What are Badhon Mondal's key projects?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal's Key Projects",
-            "text": "Key projects include Sraboni's Dream (IELTS platform), Digital Potential (web marketplace), Alok Biswas Portfolio, Recovery App (v5.0.0), Shikhito App e-sports (v1.3.8), Scholarship App, and Hisab Management (v2.0.0) — covering web apps, Android apps and Flutter development."
-          }
-        },
-        {
-          "@type": "Question",
-          "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#faq-scraping",
-          "name": "Does Badhon Mondal provide web scraping and data automation services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "name": "Badhon Mondal Web Scraping & Data Automation",
-            "text": "Yes. Badhon Mondal provides professional web scraping and data automation services using Python, BeautifulSoup, Selenium, Requests, and Pandas. He builds tools that extract, process, and automate structured data pipelines for businesses worldwide."
-          }
-        }
-      ]
-    },
+
     {
       "@type": "LocalBusiness",
       "@id": "https://badhonmondol.github.io/BADHON-MONDAL/#localbusiness",
@@ -1375,6 +1298,12 @@ footer{background:var(--dark2);border-top:1px solid rgba(0,229,255,.12);padding:
 
 <div id="cur"></div>
 <div id="cur-r"></div>
+
+<!-- PHOTO LIGHTBOX -->
+<div id="photo-modal" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;">
+  <button onclick="document.getElementById('photo-modal').style.display='none'" style="position:absolute;top:20px;right:25px;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;z-index:100000;line-height:1;">&times;</button>
+  <img src="https://files.catbox.moe/zjiwff.jpeg" onclick="event.stopPropagation()" style="max-width:92vw;max-height:92vh;border-radius:12px;object-fit:contain;box-shadow:0 0 60px rgba(0,229,255,.3);">
+</div>
 <canvas id="pcvs"></canvas>
 <button id="totop"><i class="fas fa-chevron-up"></i></button>
 <a href="https://wa.me/8801821312017?text=Hello%20Badhon%20Mondal!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" id="whatsapp-float" title="Chat with me on WhatsApp">
@@ -1408,9 +1337,7 @@ toTopBtn.addEventListener('click', () => {
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#freelance">Freelance</a></li>
-    <li><a href="#portfolio">Social</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Social & Contact</a></li>
   </ul>
 </nav>
 
@@ -1436,11 +1363,11 @@ toTopBtn.addEventListener('click', () => {
   <span class="fc" style="bottom:18%;left:9%;animation-delay:1.2s">nmap -sV target 🔍</span>
 
   <div class="hero-inner">
-    <div class="photo-wrap">
+    <div class="photo-wrap" onclick="document.getElementById('photo-modal').style.display='flex'" style="cursor:pointer;">
       <div class="photo-glow"></div>
       <div class="photo-border"></div>
       <div class="photo-mask">
-        <img id="hero-img" src="reaper.jpeg" alt="Badhon Mondal - Full Stack Developer from Bangladesh specializing in Flutter, Python, React Native and Firebase" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+        <img id="hero-img" src="https://files.catbox.moe/zjiwff.jpeg" alt="Badhon Mondal - Full Stack Developer from Bangladesh specializing in Flutter, Python, React Native and Firebase" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
       </div>
       <div class="orbit orbit1"></div>
       <div class="orbit orbit2"></div>
@@ -1454,8 +1381,7 @@ toTopBtn.addEventListener('click', () => {
       <div class="h-nick">REAPER</div>
       <div class="h-typed">$ <span id="tc"></span></div>
       <p class="h-desc">
-        I build <span class="hl">mobile and web apps</span> using <span class="hl">Flutter, Python, React Native, and Firebase</span>. Available for <span class="hl">freelance work worldwide</span>.<br>
-        🎯 Dream: Higher Studies in <span class="hl">United Kingdom 🇬🇧</span>
+        I build <span class="hl">mobile and web apps</span> using <span class="hl">Flutter, Python, React Native, and Firebase</span>. Available for <span class="hl">freelance work worldwide</span>.
       </p>
       <div class="h-btns">
         <a href="#projects" class="btn-p">View Projects</a>
@@ -1477,34 +1403,14 @@ toTopBtn.addEventListener('click', () => {
     <div class="ab-text rv">
       <h3>Who am I?</h3>
       <p>
-        My name is <span class="hl">Badhon Mondal</span>, also known as <span class="hlp">Reaper</span>. 
-        I am a student and a <span class="hl">Full-Stack Software Developer</span> from Bangladesh. 
+        My name is <span class="hl">Badhon Mondal</span>, also known as <span class="hlp">Reaper</span> — a <span class="hl">Full-Stack Software Developer</span> from Bangladesh.
       </p>
       <p>
-        I build <span class="hl">real-world mobile and web applications</span> using <span class="hl">Flutter, Python, React Native, Firebase, and Node.js</span>, and more. 
-        I enjoy <span class="hlg">turning complex ideas into functional, working products</span> and I am always hungry to learn something new to stay ahead in the tech industry.
+        I build <span class="hl">mobile & web apps</span> using <span class="hl">Flutter, Python, React Native & Firebase</span> — also skilled in <span class="hlg">Web Scraping, Lead Generation, Data Collection, Graphic Design, Digital Marketing & SEO</span>.
       </p>
-      <p>
-        From developing secure messaging apps like <span class="hlp">PrivateHub</span> to automation tools like <span class="hlp">ScholarSearch</span>, 
-        I strive to create software that makes a difference.
-      </p>
-      <p>
-        My dream is to pursue <span class="hlp">higher studies in the United Kingdom</span> for better education and global career opportunities, 
-        aiming for a <span class="hl">Bachelor's degree in Computer Science</span>.
-      </p>
-      <p>
-        I strongly believe in <span class="hlg">Honesty</span> — it is the foundation of everything I do, both in life and in my work. 
-        I ensure <span class="hl">transparency and integrity</span> in every line of code I write and every collaboration I undertake 
-        with global clients on platforms like Upwork and Fiverr.
-      </p>
-      <div class="target-pill">🎯 Goal: Scholarship to UK University for Computer Science 🇬🇧</div>
+
     </div>
-    <div class="stats-grid rv">
-      <div class="stat-card"><span class="n">6+</span><span class="l">TECH STACKS</span></div>
-      <div class="stat-card"><span class="n">8+</span><span class="l">REAL PROJECTS</span></div>
-      <div class="stat-card"><span class="n">3+</span><span class="l">FREELANCE PLATFORMS</span></div>
-      <div class="stat-card"><span class="n">∞</span><span class="l">AMBITION</span></div>
-    </div>
+
   </div>
 </section>
 
@@ -1661,101 +1567,6 @@ toTopBtn.addEventListener('click', () => {
       </div>
     </div>
 
-    <!-- Key Achievements -->
-    <div class="exp-section rv" style="margin-top:40px;">
-      <h3 style="font-size:1.3rem;color:var(--cyan);margin-bottom:30px;font-family:var(--orbitron);letter-spacing:1px;">
-        <i class="fas fa-trophy" style="margin-right:10px;color:var(--orange);"></i>Key Achievements
-      </h3>
-      
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
-        <div class="exp-achievement rv" style="background:rgba(0,229,255,.12);border:1px solid rgba(0,229,255,.28);border-radius:10px;padding:20px;text-align:center;">
-          <p style="font-size:2.5rem;margin:0 0 10px 0;">50+</p>
-          <h5 style="color:var(--cyan);font-family:var(--orbitron);font-size:.95rem;margin:0 0 8px 0;letter-spacing:1px;">PROJECTS DELIVERED</h5>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:0;line-height:1.5;">
-            Successfully completed 50+ projects across mobile, web, and backend development.
-          </p>
-        </div>
-
-        <div class="exp-achievement rv" style="background:rgba(155,89,255,.08);border:1px solid rgba(155,89,255,.2);border-radius:10px;padding:20px;text-align:center;">
-          <p style="font-size:2.5rem;margin:0 0 10px 0;">100+</p>
-          <h5 style="color:var(--purple);font-family:var(--orbitron);font-size:.95rem;margin:0 0 8px 0;letter-spacing:1px;">SATISFIED CLIENTS</h5>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:0;line-height:1.5;">
-            Built trust with 100+ clients worldwide with consistent quality and reliability.
-          </p>
-        </div>
-
-        <div class="exp-achievement rv" style="background:rgba(57,255,20,.08);border:1px solid rgba(57,255,20,.2);border-radius:10px;padding:20px;text-align:center;">
-          <p style="font-size:2.5rem;margin:0 0 10px 0;">4.9⭐</p>
-          <h5 style="color:var(--green);font-family:var(--orbitron);font-size:.95rem;margin:0 0 8px 0;letter-spacing:1px;">AVERAGE RATING</h5>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:0;line-height:1.5;">
-            Maintained excellent client satisfaction ratings across all platforms.
-          </p>
-        </div>
-
-        <div class="exp-achievement rv" style="background:rgba(255,124,26,.08);border:1px solid rgba(255,124,26,.2);border-radius:10px;padding:20px;text-align:center;">
-          <p style="font-size:2.5rem;margin:0 0 10px 0;">8</p>
-          <h5 style="color:var(--orange);font-family:var(--orbitron);font-size:.95rem;margin:0 0 8px 0;letter-spacing:1px;">MAJOR PROJECTS</h5>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:0;line-height:1.5;">
-            Developed 8 major portfolio projects showcasing technical excellence.
-          </p>
-        </div>
-
-        <div class="exp-achievement rv" style="background:rgba(240,0,184,.12);border:1px solid rgba(240,0,184,.2);border-radius:10px;padding:20px;text-align:center;">
-          <p style="font-size:2.5rem;margin:0 0 10px 0;">🌍</p>
-          <h5 style="color:var(--pink);font-family:var(--orbitron);font-size:.95rem;margin:0 0 8px 0;letter-spacing:1px;">GLOBAL PRESENCE</h5>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:0;line-height:1.5;">
-            Working with clients across continents with 24/7 availability.
-          </p>
-        </div>
-
-        <div class="exp-achievement rv" style="background:rgba(255,206,58,.08);border:1px solid rgba(255,206,58,.2);border-radius:10px;padding:20px;text-align:center;">
-          <p style="font-size:2.5rem;margin:0 0 10px 0;">🎯</p>
-          <h5 style="color:#ffd700;font-family:var(--orbitron);font-size:.95rem;margin:0 0 8px 0;letter-spacing:1px;">SKILL MASTERY</h5>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:0;line-height:1.5;">
-            Expert proficiency in 10+ programming languages and frameworks.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Core Competencies -->
-    <div class="exp-section rv" style="margin-top:40px;">
-      <h3 style="font-size:1.3rem;color:var(--cyan);margin-bottom:30px;font-family:var(--orbitron);letter-spacing:1px;">
-        <i class="fas fa-rocket" style="margin-right:10px;color:#ff6b00;"></i>Core Competencies
-      </h3>
-      
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;">
-        <div class="comp-badge rv" style="background:rgba(0,229,255,.15);border:1px solid var(--cyan);border-radius:8px;padding:15px;text-align:center;">
-          <p style="color:var(--cyan);font-weight:600;margin:0;font-family:var(--orbitron);">Mobile Dev</p>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:5px 0 0 0;">Flutter, React Native, Native Android</p>
-        </div>
-
-        <div class="comp-badge rv" style="background:rgba(155,89,255,.14);border:1px solid var(--purple);border-radius:8px;padding:15px;text-align:center;">
-          <p style="color:var(--purple);font-weight:600;margin:0;font-family:var(--orbitron);">Backend Dev</p>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:5px 0 0 0;">Node.js, Python, REST APIs, Databases</p>
-        </div>
-
-        <div class="comp-badge rv" style="background:rgba(57,255,20,.1);border:1px solid var(--green);border-radius:8px;padding:15px;text-align:center;">
-          <p style="color:var(--green);font-weight:600;margin:0;font-family:var(--orbitron);">Full Stack</p>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:5px 0 0 0;">End-to-end Solutions, Firebase, Cloud</p>
-        </div>
-
-        <div class="comp-badge rv" style="background:rgba(255,124,26,.1);border:1px solid #ff6b00;border-radius:8px;padding:15px;text-align:center;">
-          <p style="color:#ff6b00;font-weight:600;margin:0;font-family:var(--orbitron);">Security</p>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:5px 0 0 0;">Ethical Hacking, Penetration Testing, Secure Code</p>
-        </div>
-
-        <div class="comp-badge rv" style="background:rgba(240,0,184,.14);border:1px solid var(--pink);border-radius:8px;padding:15px;text-align:center;">
-          <p style="color:var(--pink);font-weight:600;margin:0;font-family:var(--orbitron);">DevOps</p>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:5px 0 0 0;">Git, Linux, Bash, Docker Basics</p>
-        </div>
-
-        <div class="comp-badge rv" style="background:rgba(255,206,58,.1);border:1px solid #ffd700;border-radius:8px;padding:15px;text-align:center;">
-          <p style="color:#ffd700;font-weight:600;margin:0;font-family:var(--orbitron);">Problem Solving</p>
-          <p style="color:rgba(255,255,255,.6);font-size:.85rem;margin:5px 0 0 0;">Algorithms, Architecture Design, Optimization</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1888,7 +1699,7 @@ toTopBtn.addEventListener('click', () => {
     <div class="sec-line"></div>
   </div>
   <div class="fl-grid">
-    <div class="fl-card fl-github rv" onclick="openLink('https://github.com/badhonmondal')" style="cursor:pointer;">
+    <div class="fl-card fl-github rv" onclick="openLink('https://github.com/badhonmondol')" style="cursor:pointer;">
       <span class="fl-icon"><i class="fab fa-github"></i></span>
       <div class="fl-name">GitHub</div>
       <p class="fl-desc">Explore all my open-source projects, code repositories, and contributions to the developer community.</p>
@@ -1910,13 +1721,14 @@ toTopBtn.addEventListener('click', () => {
 </section>
 
 <!-- SOCIAL -->
-<section id="portfolio">
+<!-- CONTACT -->
+<section id="contact">
   <div class="sec-hd rv">
-    <span class="sec-tag">// 005 — SOCIAL</span>
+    <span class="sec-tag">// 005 — SOCIAL & CONTACT</span>
     <h2 class="sec-title">Find Me Online</h2>
     <div class="sec-line"></div>
   </div>
-  <div class="soc-grid">
+  <div class="soc-grid" style="margin-bottom:60px;">
     <a href="https://www.tiktok.com/@_oky_sorry_96" target="_blank" rel="noopener noreferrer" class="soc-card sc-tt rv">
       <div class="soc-icon-wrap"><i class="fab fa-tiktok"></i></div>
       <div class="soc-info"><h4>TikTok</h4><p>Click to connect</p></div>
@@ -1937,7 +1749,7 @@ toTopBtn.addEventListener('click', () => {
       <div class="soc-info"><h4>Email</h4><p>Click to connect</p></div>
       <i class="fas fa-arrow-right soc-arrow"></i>
     </a>
-    <a href="https://github.com/badhonmondal" target="_blank" rel="noopener noreferrer" class="soc-card sc-gh rv">
+    <a href="https://github.com/badhonmondol" target="_blank" rel="noopener noreferrer" class="soc-card sc-gh rv">
       <div class="soc-icon-wrap"><i class="fab fa-github"></i></div>
       <div class="soc-info"><h4>GitHub</h4><p>Click to connect</p></div>
       <i class="fas fa-arrow-right soc-arrow"></i>
@@ -1958,86 +1770,35 @@ toTopBtn.addEventListener('click', () => {
       <i class="fas fa-arrow-right soc-arrow"></i>
     </a>
   </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="sec-hd rv">
-    <span class="sec-tag">// 006 — FAQ</span>
-    <h2 class="sec-title">Questions & Answers</h2>
-    <div class="sec-line"></div>
+  <div class="soc-grid" style="margin-top:30px;">
+    <div class="ct-item rv" onclick="openLink('mailto:badhonkumurm@gmail.com')" style="cursor:pointer;" class="soc-card sc-em rv">
+      <div class="soc-icon-wrap"><i class="fas fa-envelope"></i></div>
+      <div class="soc-info"><h4>Email</h4><p>Send me an email</p></div>
+      <i class="fas fa-arrow-right soc-arrow"></i>
+    </div>
+    <div onclick="openLink('https://wa.me/8801821312017?text=Hi%20Badhon!%20I%20found%20your%20portfolio')" style="cursor:pointer;" class="soc-card sc-wa rv">
+      <div class="soc-icon-wrap"><i class="fab fa-whatsapp"></i></div>
+      <div class="soc-info"><h4>WhatsApp</h4><p>Message me via WhatsApp</p></div>
+      <i class="fas fa-arrow-right soc-arrow"></i>
+    </div>
+    <div onclick="openLink('https://github.com/badhonmondol')" style="cursor:pointer;" class="soc-card sc-gh rv">
+      <div class="soc-icon-wrap"><i class="fab fa-github"></i></div>
+      <div class="soc-info"><h4>GitHub</h4><p>View my profile</p></div>
+      <i class="fas fa-arrow-right soc-arrow"></i>
+    </div>
+    <a href="https://files.catbox.moe/zjylqz.pdf" target="_blank" rel="noopener noreferrer" class="soc-card rv" style="background:rgba(57,255,20,.08);border:1px solid var(--green);">
+      <div class="soc-icon-wrap" style="background:linear-gradient(135deg,var(--green),#00b377);"><i class="fas fa-file-pdf"></i></div>
+      <div class="soc-info"><h4>Curriculum Vitae</h4><p>Download my CV (PDF)</p></div>
+      <i class="fas fa-arrow-right soc-arrow"></i>
+    </a>
   </div>
-  <div class="faq-grid">
-    <div class="faq-item rv" id="faq-who">
-      <h3>Who is Badhon Mondal?</h3>
-      <p>Badhon Mondal, professionally known as Reaper, is a Full-Stack Software Developer from Bangladesh with experience building cross-platform applications for Android, iOS, Web, and Windows.</p>
-    </div>
-    <div class="faq-item rv" id="faq-languages">
-      <h3>What programming languages does Badhon Mondal know?</h3>
-      <p>Badhon works with Flutter, Dart, Python, Java, C++, JavaScript, React Native, Node.js, Firebase, and modern web technologies.</p>
-    </div>
-    <div class="faq-item rv" id="faq-services">
-      <h3>What services does Badhon Mondal provide?</h3>
-      <p>Badhon provides Flutter app development, full-stack web development, Python backend development, React Native development, software consultation, and custom cross-platform software development.</p>
-    </div>
-    <div class="faq-item rv" id="faq-contact">
-      <h3>How can I contact Badhon Mondal?</h3>
-      <p>You can contact Badhon Mondal by email at badhonkumurm@gmail.com, WhatsApp at +8801821312017, LinkedIn, GitHub, Fiverr, or Upwork.</p>
-    </div>
-    <div class="faq-item rv" id="faq-location">
-      <h3>Where is Badhon Mondal based?</h3>
-      <p>Badhon Mondal is based in Dhaka, Bangladesh and works remotely with clients worldwide.</p>
-    </div>
-    <div class="faq-item rv" id="faq-projects">
-      <h3>What are Badhon Mondal's key projects?</h3>
-      <p>Key projects include Sraboni's Dream (IELTS platform), Digital Potential (web marketplace), Alok Biswas Portfolio, Recovery App, Shikhito App (e-sports), Scholarship App, Hisab Management, and Instagram Data Collection — covering web apps, Android apps, Flutter and Python data tools.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="sec-hd rv">
-    <span class="sec-tag">// 007 — CONTACT</span>
-    <h2 class="sec-title">Get In Touch</h2>
-    <div class="sec-line"></div>
-  </div>
-  <div class="ct-wrap">
-    <div class="ct-info rv">
-      <h3>Let's Connect 🔗</h3>
-      <div class="ct-item rv" style="cursor:default;opacity:0.6;">
-        <div class="ct-ic" style="background:linear-gradient(135deg,var(--cyan),var(--purple));"><i class="fas fa-phone"></i></div>
-        <div class="ct-tx"><p>PHONE</p><p>📞 Available via WhatsApp/Email</p></div>
-      </div>
-      <div class="ct-item rv" style="cursor:default;opacity:0.6;">
-        <div class="ct-ic" style="background:linear-gradient(135deg,var(--purple),var(--pink));"><i class="fas fa-lock"></i></div>
-        <div class="ct-tx"><p>PRIVACY</p><p>Contact via email or WhatsApp</p></div>
-      </div>
-      <div class="ct-item rv" onclick="openLink('mailto:badhonkumurm@gmail.com')" style="cursor:pointer;">
-        <div class="ct-ic" style="background:linear-gradient(135deg,var(--pink),var(--orange));"><i class="fas fa-envelope"></i></div>
-        <div class="ct-tx"><p>EMAIL</p><p>Send me an email</p></div>
-      </div>
-      <div class="ct-item rv" onclick="openLink('https://wa.me/8801821312017?text=Hi%20Badhon!%20I%20found%20your%20portfolio')" style="cursor:pointer;">
-        <div class="ct-ic" style="background:linear-gradient(135deg,#25d366,#128c7e);"><i class="fab fa-whatsapp"></i></div>
-        <div class="ct-tx"><p>WHATSAPP</p><p>Message me via WhatsApp</p></div>
-      </div>
-      <div class="ct-item rv" onclick="openLink('https://github.com/badhonmondal')" style="cursor:pointer;">
-        <div class="ct-ic" style="background:linear-gradient(135deg,#24292f,#57606a);"><i class="fab fa-github"></i></div>
-        <div class="ct-tx"><p>GITHUB</p><p>View my profile</p></div>
-      </div>
-      <a class="ct-item rv" href="https://files.catbox.moe/zjylqz.pdf" target="_blank" rel="noopener noreferrer" style="cursor:pointer;">
-        <div class="ct-ic" style="background:linear-gradient(135deg,var(--green),#00b377);"><i class="fas fa-file-pdf"></i></div>
-        <div class="ct-tx"><p>CURRICULUM VITAE</p><p>Download my CV (PDF)</p></div>
-      </a>
-    </div>
-    <div class="ct-form rv">
-      <h3>Send a Message</h3>
-      <input class="finput rv" type="text" placeholder="Your Name" id="fn">
-      <input class="finput rv" type="email" placeholder="Your Email" id="fe">
-      <input class="finput rv" type="text" placeholder="Subject" id="fs">
-      <textarea class="ftextarea rv" placeholder="Your message..." id="fb"></textarea>
-      <button class="btn-send rv" onclick="sendMsg()"><i class="fas fa-paper-plane"></i> SEND MESSAGE</button>
-    </div>
+  <div class="ct-form rv" style="max-width:600px;margin:40px auto 0;">
+    <h3>Send a Message</h3>
+    <input class="finput rv" type="text" placeholder="Your Name" id="fn">
+    <input class="finput rv" type="email" placeholder="Your Email" id="fe">
+    <input class="finput rv" type="text" placeholder="Subject" id="fs">
+    <textarea class="ftextarea rv" placeholder="Your message..." id="fb"></textarea>
+    <button class="btn-send rv" onclick="sendMsg()"><i class="fas fa-paper-plane"></i> SEND MESSAGE</button>
   </div>
 </section>
 
@@ -2051,9 +1812,7 @@ toTopBtn.addEventListener('click', () => {
     <a href="#experience" class="rv">Experience</a>
     <a href="#projects" class="rv">Projects</a>
     <a href="#freelance" class="rv">Freelance</a>
-    <a href="#portfolio" class="rv">Social</a>
-    <a href="#faq" class="rv">FAQ</a>
-    <a href="#contact" class="rv">Contact</a>
+    <a href="#contact" class="rv">Social & Contact</a>
   </div>
   <div class="ft-copy">
     &copy; 2026 <span class="hl">Badhon Mondal</span> aka <span class="hl">Reaper</span>. All rights reserved.<br>
