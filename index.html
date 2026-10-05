@@ -2078,12 +2078,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.stat-card').forEach((card, i) => card.style.animationDelay = `${i * 0.1}s`);
 });
 
-// PARALLAX EFFECT — clamped so content never slides under the navbar
+// PARALLAX EFFECT — disabled on mobile/touch devices
 const heroInner = document.querySelector('.hero-inner');
+const isMobile = () => window.innerWidth <= 900 || ('ontouchstart' in window);
 window.addEventListener('scroll', () => {
-  if (!heroInner || window.scrollY >= window.innerHeight) return;
+  if (!heroInner || isMobile()) {
+    heroInner.style.transform = '';
+    return;
+  }
+  if (window.scrollY >= window.innerHeight) return;
   const navH = document.getElementById('navbar').offsetHeight;
-  const shift = window.scrollY * 0.3; // reduced from 0.5 → less aggressive
+  const shift = window.scrollY * 0.3;
   const maxShift = Math.max(0, heroInner.getBoundingClientRect().top + heroInner.offsetHeight - navH - 80);
   heroInner.style.transform = `translateY(${Math.min(shift, maxShift)}px)`;
 });
